@@ -1,34 +1,35 @@
 const initialState = {
     filters: [],
-    filtersLoadingStatus: "idle",
+    filtersLoadingStatus: "idle", // idle, loading, loaded, error
     activeFilter: "all"
 }
 
 const filters = (state = initialState, action) => {
     switch (action.type) {
         case "FILTERS_FETCHING":
-            return{
+            return {
                 ...state,
-                filtersLoadingStatus: "loading"
+                filtersLoadingStatus: "loading" // Set status to loading when fetching
             }
         case "FILTERS_FETCHED":
-            return{
+            return {
                 ...state,
-                filters: action.payload,
-                filtersLoadingStatus: "error"
+                filters: action.payload, // Save the fetched filters in state
+                filtersLoadingStatus: "loaded" // Set status to loaded when the fetch is successful
             }
         case "FILTERS_FETCHING_ERROR":
-            return{
+            return {
                 ...state,
-                filtersLoadingStatus:"error"
+                filtersLoadingStatus: "error" // Set status to error when fetching fails
             }
         case "ACTIVE_FILTER_CHANGED":
             return {
                 ...state,
-                activeFilter: action.payload
+                activeFilter: action.payload // Set the active filter when the user changes it
             }
-        default: return state
+        default:
+            return state;
     }
 }
 
-export default filters
+export default filters;

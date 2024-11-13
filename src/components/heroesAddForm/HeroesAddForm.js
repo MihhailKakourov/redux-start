@@ -11,7 +11,7 @@ const HeroesAddForm = () => {
     const [heroElement, setHeroElement] = useState("");
 
     const {filters, filtersLoadingStatus} = useSelector(state => state.filters)
-    const dispatch = useDispatch
+    const dispatch = useDispatch()
     const {request} = useHttp()
 
     const onSubmitHandler = (e) => {
@@ -23,7 +23,7 @@ const HeroesAddForm = () => {
             element: heroElement
         }
 
-        request("http://localhost:3000/heroes", "POST", JSON.stringify(newHero))
+        request("http://localhost:3001/heroes", "POST", JSON.stringify(newHero))
             .then(res => console.log(res, "Success"))
             .then(dispatch(heroCreated(newHero)))
             .catch(err => console.log(err))
@@ -40,9 +40,9 @@ const HeroesAddForm = () => {
             return <option>Error loading</option>
         }
 
-        if (filters && filters.lenght > 0){
+        if (filters && filters.length > 0){
             return filters.map(({name, label}) => {
-                if (name === "all") return
+                if (name === "all") return null
 
                 return <option key={name} value={name}>{label}</option>
             })

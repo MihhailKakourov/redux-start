@@ -1,22 +1,28 @@
 {
   "heroes": [
     {
-      "id": 1,
-      "name": "Первый герой",
-      "description": "Первый герой в рейтинге!",
+      "id": "e37c67a8-0852-41f0-9842-462a920965de",
+      "name": "Eduard",
+      "description": "da",
       "element": "fire"
     },
     {
-      "id": 2,
-      "name": "Неизвестный герой",
-      "description": "Скрывающийся в тени",
+      "id": "15b732b1-60fd-43d1-8446-d7cfadbd068c",
+      "name": "CHECK",
+      "description": "123",
+      "element": "earth"
+    },
+    {
+      "id": "6c1b784d-48db-46f2-ae7d-a1d7330b6f79",
+      "name": "DOUBLECHECK",
+      "description": "321",
       "element": "wind"
     },
     {
-      "id": 3,
-      "name": "Морской герой",
-      "description": "Как аквамен, но не из DC",
-      "element": "water"
+      "id": "c48ef2d2-cf4c-4da1-8398-b67ec33ddf11",
+      "name": "sdf",
+      "description": "sdf",
+      "element": "fire"
     }
   ],
   "filters": [

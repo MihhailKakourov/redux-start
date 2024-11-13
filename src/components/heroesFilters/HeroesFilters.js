@@ -20,7 +20,7 @@ const HeroesFilters = () => {
 
   useEffect(() => {
     dispatch(filtersFetching());
-    request("http://localhost:3000/filters")
+    request("http://localhost:3001/filters")
       .then((data) => dispatch(filtersFetched(data)))
       .catch(() => dispatch(filtersFetchingError()));
   }, []);
@@ -46,7 +46,7 @@ const HeroesFilters = () => {
           id={name}
           className={btnClass}
           onClick={() => dispatch(activeFilterChanged(name))}
-        ></button>
+        >{label}</button>
       );
     });
   };
